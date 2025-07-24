@@ -1,0 +1,483 @@
+(1) To write a comment in html :-
+
+correct syntax is :-
+
+<!-- Or <hr /> or <hr> -->
+
+✅ Rule for HTML comments:
+Must start with <!--
+
+Must end with -->
+
+No space between <! and --, or between -- and >
+
+
+(2) Importance of indendation in html :-
+
+There is no importance of indendation in html 
+but it can be given for any human to understand the code
+
+(3) Importance of <ul> or <ol> before using <li> :-
+
+It is not a problem to use only <li> without wrapping it in either <ul> or <ol>, but it is considered a good practice to wrap them.
+But if not done than still it will come as bullet points wherever i used <li> without any wrap just proper indendation or spacing would be missing for the element to be headed before <li>.
+
+
+
+########### Important :-
+
+<a href="#contact">Go to Contact</a>
+...
+<h2 id="contact">Contact Section</h2>
+
+<a href="https://example.com" title="Go to Example Website">Hover over me</a>
+The title attribute is used to provide extra information about the link. When the user hovers the mouse over the link, a small tooltip box appears showing the text inside the title.
+
+
+The draggable attribute is a Boolean attribute in HTML that specifies whether an element can be dragged using the mouse.
+You can use it with <a> tags to allow or prevent the user from dragging the link.
+<a href="https://example.com" draggable="true">Drag This Link</a>
+📌 You can click and drag this link to, for example, the bookmarks bar or another browser tab.
+
+<a href="https://example.com" draggable="false">Can't Drag This</a>
+📌 This link cannot be dragged—even though normally links are draggable by default.
+
+
+
+### INLINE css :-
+-----> It goes in the same line as the particulare html element
+------> I have to use this method inside <body>
+------> <tag style="css" />
+
+
+### INTERNAL css :-
+------> I have to use this inside <head>
+------> Inside <style> </style>
+******** Style is a global attribute available to all tags <h1> to <h6> <img> <br /> etc 
+✅ Internal CSS — Where Should It Be Placed?
+In HTML, internal CSS should always be placed inside a <style> tag, and that tag must be inside the <head> section of the HTML document.
+
+
+
+### External css :-
+---> I have to use this by making a file with extesnion css and then linking it using <link /> in main index.html
+----> <link href="style.css" />
+✅ Yes — You can relate (connect) an external CSS file to your main HTML file using only and only the <link /> tag inside the <head>.
+
+
+CSS selector :-  It is the part outside the css code on which the css styling is applied
+#######    DIFFERENT SELECTORS :-   (5.3)
+
+( 1 )  Element selector :-   It selects a particular html element and performs the mentioned css whenever that element appears in the main code
+
+index.html :-
+<h2>Red</h2>
+<h2>Green</h2>
+<h3>hi</h3>
+
+style.css :-
+h2{         This is the element selector (h2)
+    color:red;
+}
+
+( 2 ) Class selector :- It requires the special symbol "dot" ( . ) and after . with NO SPACES immediately the name of the class is written after that the css code is written inside the curly braces
+
+What is class ????
+--------> CLASS is like an attribute that can be added to any html element and that means lets group that particular element in the class, not all the instances of that html element, but only that html element to which class attribute is added
+
+<h2 class="red-text">Red</h2>
+<h2>Green</h2>
+<h2>Blue</h2>
+<p class="red-text">Paragraph</p>
+
+style.css :-
+.red-text{
+    color:red;
+}
+
+****** Only changes in Red and Paragraph as class attribute is rpesent there only.
+
+
+( 3 ) ID SELECTOR :- It is same as CLASS SELECTOR, the only difference is that it starts with "#" and 
+
+            class selector can be applied to more than one elements in a html file.
+
+            id selector can be applied to only and only one element in a html file. It is unique the name as defined in style.css can be used by only and only one element in a html file
+
+<h2 id="main">Red</h2>      "main" can be used only once
+<h2>Green</h2>
+<h2>Blue</h2>
+
+style.css :-
+
+#main{          since, it is an id selector, so it can be used only once
+    color:red;
+}
+
+
+( 4 )   ATTRIBUTE SELECTOR :-  An attribute selector in CSS is used to select and style HTML elements based on the presence or value of a specific attribute.
+
+
+<p draggable="true">Drag me</p>
+<p draggable="false">Dont drag me</P>
+<p draggable="false">Dont drag me</p>
+
+
+style.css :-
+
+p[draggable="false"]{
+    color:red;
+}
+
+
+********* Here, Dont drag me will be in red 
+
+In a given html tag like "h1" we can add many attributes like "id=" "class=" "draggable=" "src=" "href=" "alt=" 
+so,bt attribute selector, we can select tag that are having the particular attributes as mentioned in style.css
+
+
+Types of attribute selectors :-
+
+
+🔹 Syntax:
+css
+
+element[attribute] {
+  /* styles */
+}
+🔹 Examples:
+Select elements with a specific attribute (regardless of value):
+
+(1) css :-
+
+input[required] {
+  border: 2px solid red;
+}
+🔸 This selects all <input> elements that have the required attribute.
+
+Select elements with a specific attribute value:
+
+(2) css :-
+
+
+a[target="_blank"] {
+  color: green;
+}
+🔸 This targets only <a> tags where target="_blank" (links that open in new tabs).
+
+Attribute value starts with a specific string (^=):
+
+(3) css :-
+
+
+a[href^="https"] {
+  color: blue;
+}
+🔸 Selects all links where the href starts with "https".
+
+Attribute value ends with a specific string ($=):
+
+(4) css :-
+
+img[src$=".jpg"] {
+  border-radius: 10px;
+}
+🔸 Targets all images whose src ends with .jpg.
+
+Attribute value contains a specific string (*=):
+
+(5) css :-
+
+div[class*="header"] {
+  background-color: lightgray;
+}
+🔸 Selects all <div> elements where the class contains the word “header” anywhere in it.
+
+
+( 5 ) UNIVERSAL SELECTOR :- It contains only " * " , which simply means "SELECT ALL" WHERE "STYLESHEET" IS ACTIVE
+
+
+
+########### CSS PROPERTIES :-
+
+
+(1) FONT SIZE :-
+
+
+-----> 1px :-  It is equivalent to a square of side length 1/96th inch
+
+-----> 1pt :-  It is equivalent to a square of side length 1/72nd inch (SLIGHTLY GREATER THAN 1px)
+
+-----> 1em :-  It is equivalent to the size of 100% OF THE PARENT
+
+-----> 1rem :-  It is equivalent to the size of 100% of the root (HTML)
+
+
+
+(2) FONT WEIGHT :-
+
+
+-----> font-weight is a CSS property that controls how bold or light text appears on a webpage.
+
+-----> It cane be represented as :-
+
+
+( i )  KEYWORDS :-
+
+
+normal :-  DEFAULT WEIGHT (USUALLY 400)
+
+bold :-  BOLD TEXT (USUALLY 700)
+
+
+( ii )  RELATIVE TO PARENT :-
+
+
+lighter :-  lighter than the parent ( AT EACH TIME IT DECREASES BOLD BY 100 )
+
+bolder :-  bolder than the parent  ( AT EACH TIME IT INCREASES BY 100 )
+
+
+( iii )   100-900 :-
+
+
+100 :-  MAXIMUM LIGHT 
+
+900 :-  MAXIMUM BOLD
+
+
+
+( 2 )   FONT FAMILY :-
+
+
+
+🌟 What is Font Family in CSS?
+In CSS, the font-family property is used to set the typeface (style of text) for text content on a web page.
+
+
+Syntax :-
+
+
+selector {
+  font-family: "Font Name", fallback;
+}
+
+
+🧠 How It Works:
+You provide a list of fonts (called a "font stack") in order of preference.
+
+The browser will try to use the first font.
+
+If it’s not available, it moves to the next, and so on.
+
+The last option is usually a generic family like serif, sans-serif, or monospace.
+
+
+
+
+✅ Example:
+css
+
+body {
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+
+This means:
+
+Use Arial if available.
+
+If not, use Helvetica.
+
+If neither are available, use any sans-serif font.
+
+
+
+###############################    THE BOX MODEL :-
+
+---> Each element in a website is enclosed in a box
+we can change height and width by 
+
+height:100px;
+weight:100px;
+
+or even by % :-
+width=100%  ----> This means width will cover 100% of the webpage
+
+
+(1)     BORDER :-   We can also set border in a given box
+
+----> Generally, it takes 3 parameters
+
+SYNTAX :-
+
+border : thickness style color;
+
+thickness :-  in terms of px
+style :- SOLID or DASHED
+color :- Color of the border
+
+********* EVEN THOUGH I MAKE BORDER VERY THICK, EVEN THEN IT WON'T CHANGE THE HEIGHT AND WIDTH OF THE BOX AS MENTIONED IN CODE.
+SO, We can conclude that based on the thickness of the border it moves outside rather than moving inside.
+
+
+###### MODIFYING BORDER WITH MORE SPECIFIC RULES :-
+
+
+(i)
+
+border:30px solid black;
+  border-top: 0px;
+
+
+The above code means make border of rhickness 30px solid style and color black but make the top border as 0px.
+
+(ii)   border-width can take a maximum of 4 values. It can also take only 2 values 
+
+where 1 and 3 (top and bottom) will be assigned the thickness of 1st parameter and 2 and 4(both sides) will be assigned the thickness of 2nd parameter
+
+
+border:30px solid black;
+border-width:0px 10px 20px 30px;
+
+
+
+############## WHAT IS PADDING ?????
+
+Padding in CSS is the space between the content of an element and its border. Think of it like the "inner space" inside a box.
+
+
++-----------------------------+
+|         Margin             |   ← Outside space
+|  +----------------------+  |
+|  |      Border          |  |   ← Border
+|  |  +----------------+  |  |
+|  |  |   Padding      |  |  |   ← Inner space
+|  |  | +------------+ |  |  |
+|  |  | |  Content   | |  |  |   ← Actual text/image/etc.
+|  |  | +------------+ |  |  |
+|  |  +----------------+  |  |
+|  +----------------------+  |
++-----------------------------+
+
+
+so, if :-
+
+padding:20px;
+
+Then it will push the borders 20px from all 4 sides from the box of content, still the height and width of the content box remails same.
+
+############ WHAT IS MARGIN ????
+
+------> It is the space between the border and the next box of content in the webpage.
+
+-------> In CSS, margin is the space outside the border of an HTML element. It creates space between the element and its neighbors (other elements).
+
+
+                ┌───────────────────────────────┐
+                │           Margin              │   ← margin (space outside the border)
+                │     (space around border)     │
+                │   ┌───────────────────────┐   │
+                │   │       Border          │   │   ← border
+                │   │  ┌─────────────────┐  │   │
+                │   │  │     Padding     │  │   │   ← padding
+                │   │  │  ┌───────────┐  │  │   │
+                │   │  │  │ Content   │  │  │   │   ← content
+                │   │  │  └───────────┘  │  │   │
+                │   │  └─────────────────┘  │   │
+                │   └───────────────────────┘   │
+                └───────────────────────────────┘
+
+
+************** JUST LIKE border-width, PADDING AND MARGIN ALSO CAN TAKE UPTO 
+4 PARAMETERS AND IF NOT THEY CAN TAKE 2 PARAMETERS WITH 1ST PARAMETER OF (1 AND 3)
+AND 2ND PARAMETER OF (2 AND 4) OR JUST 1 PARAMETER THAT WILL BE CONSIDERED FOR 
+ALL THE SIDES.
+
+
+
+********* WE CAN EVEN CREATE OUR OWN ARTIFICIAL BOXES, WHICH WILL BE 
+VERY USEFUL WHEN WE WANT TO GROUP DIFFERENT TYPES OF CONTENTS (LIKE TEXT AND IMAGE)
+IN A SINGLE BOX.
+
+Like adding caption to any image ------> It can be done by " CONTENT DIVISION ELEMENT "
+
+-----> <div> is simply a container which is invisible (if not applied css to 
+visualize) which is simply used for containing elements.
+
+
+########################## VERY VERY IMPORTANT :-
+
+
+CASCADING IN CSS :-
+
+
+The Cascade in CSS is the set of rules the browser follows to determine which CSS rule takes priority when multiple rules target the same element.
+
+
+--------> There are 4 different types tp resolve rules conflict :-
+
+
+(i) Position :-
+
+-----> It resolves the conflict by looking upto the position the change is to be made.
+
+Ex :-
+
+li{
+  color: red;     -----------> 1ST POSITION
+  color: blue;  ( It is preffered as it is in the last position )   -----------> 2ND POSITION
+}
+
+
+Based  on position :-
+
+2 > 1
+
+
+(ii) Specificity :-
+
+-----> It resolves the conflict by looking the specific selector in css.
+
+ORDER :-
+
+ID > ATTRIBUTE > CLASS > ELEMENT
+
+
+EX :-
+
+li{color: blue;}                    (It is preffered forth)
+.first-class{color: red;}           (It is preffered third)
+li{draggable} {color: purple;}      (It is preffered second)
+#first-id{color: orange;}            (It is preffered first)
+
+
+(iii) TYPE :-
+
+
+INLINE CSS > INTERNAL CSS > EXTERNAL CSS
+
+
+<link rel="stylesheet" href="./style.css"/>
+<style> </style>
+<h1 style="">hello</h1>
+
+
+(iv) IMPORTANCE :-
+
+
+------> It is a keyword which can be used to make any element PRIORITIZE no matter it is preffered by (position or specificity or type).
+simply write "!important" at last of that element with a space gap.
+
+EX :-
+
+
+color: red;
+color: green !important;
+
+
+
+*********** OUT OF ALL 4 MENTIONED RULE CONFLICT RESOLVING TECHNIQUE THE ORDER AMONG THEM IS :-
+
+
+IMPORTANCE > TYPE > SPECIFICITY > Position

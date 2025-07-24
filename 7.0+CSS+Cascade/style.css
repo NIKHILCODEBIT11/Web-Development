@@ -1,0 +1,35 @@
+/* Don't change the existing CSS. */
+
+.box {
+  background-color: blue;
+  padding: 10px;
+}
+
+p {
+  color: black;
+  font-size:30px;
+  margin: 0;
+  padding: 0;
+}
+
+#outer-box{
+  border:10px solid purple;
+}
+
+.white-text{
+  background-color:red;
+  padding:10px;
+}
+
+.inner-box{
+  padding:0px;    /* By this since the padding for white text becomes 10px+10px as bacause it is child of <div class="box"> (10px from here) and as in the <div class="box inner-box"> 
+  initially when i had not defined class inner-box in style.css then at the time due to non-avaialability of class inner-box it was following class "box" due to which it was getting an 
+  additional of 10px (in total 10px+10px=20px) 
+  But when i defined class "inner-box" at that time i used padding:0px due to which the additonal 10px (that it was getting from box due to unavaialability of class"inner-box" is eliminated and it got 
+  alligned just below yellow text)
+   */
+}
+
+#outer-box{
+  margin-top:40%;
+}

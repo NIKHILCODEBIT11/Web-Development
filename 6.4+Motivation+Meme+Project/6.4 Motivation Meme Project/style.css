@@ -1,0 +1,77 @@
+*{
+    background-color:black;
+}
+
+
+/*
+.font{
+    .libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+}
+
+This will not work because :-
+
+
+Ahh — now I see exactly what you're thinking! You're trying to nest CSS classes inside another class, like this:
+
+.font {
+  .libre-baskerville-regular-italic {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+You're expecting this to mean:
+
+“When I apply .font, all styles from .libre-baskerville-regular-italic inside it will also apply.”
+
+❌ But that’s not how plain CSS works.
+✅ This kind of nesting is only allowed in SCSS or LESS, which are CSS preprocessors, not regular CSS.
+
+
+Plain CSS ignores it completely. It treats it as invalid.
+
+No styles from .libre-baskerville-regular-italic are applied — because:
+
+It’s not a real class inside .font
+
+It’s just invalid syntax in CSS
+
+*/
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform:uppercase;  /* ✨ text-transform in CSS
+The text-transform property is used to change the case (uppercase, lowercase, capitalized) of text using CSS, without actually changing the original text in HTML. */
+}
+
+img{
+  border:5px solid white;
+  width:100%;
+}
+
+.divi{
+  margin-top:100px;
+  width:50%;
+  margin-left:25%;
+  text-align: center;
+}

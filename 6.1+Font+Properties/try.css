@@ -1,0 +1,63 @@
+.ltr{
+    direction:ltr;
+}
+
+.rtl{
+    direction: rtl;
+}
+
+.text-align_left{
+    text-align: left;
+}
+
+.text-align_right{
+    text-align:right;
+}
+
+.text-align_start{
+    text-align: start;
+}
+
+.text-align_end{
+    text-align: end;
+}
+
+.ltr_left{
+    direction:ltr;
+    text-align:left;
+}
+
+.ltr_right{
+    direction:ltr;
+    text-align:right;
+}
+
+.ltr_start{
+    direction:ltr;
+    text-align:start;
+}
+
+.ltr_end{
+    direction:ltr;
+    text-align:end;
+}
+
+.rtl_left{
+    direction:rtl;
+    text-align:left;
+}
+
+.rtl_right{
+    direction:rtl;
+    text-align:right;
+}
+
+.rtl_start{
+    direction:rtl;
+    text-align:start;
+}
+
+.rtl_end{
+    direction:rtl;
+    text-align:end;
+}

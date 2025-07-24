@@ -1,0 +1,5 @@
+html{           /* Here whole HTML code is element slectore and hence whenever HTML comes it comes into effect, which is complete code(index.html) */
+    background : green;
+}
+
+/* This is how comment is added in css file    <!-- --> it is used for comments in html    */
