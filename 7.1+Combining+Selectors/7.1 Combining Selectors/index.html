@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Combining CSS Selectors</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<!-- Don't change any of the HTML code! -->
+
+<body>
+  <h1>To Do List</h1>
+  <h2>Monday</h2>
+  <div class="box">
+    <p class="done">Do these things today!</p>
+    <ul class="list">
+      <li>Wash Clothes</li>
+      <li class="done">Read</li>
+      <li class="done">Maths Questions</li>
+    </ul>
+  </div>
+
+  <ul>
+    <p class="done">Other items</p>
+  </ul>
+  <p>The best preparation for tomorrow is doing your best today.</p>
+
+</body>
+
+</html>
+
+
+<!--
+Combining CSS selectors allows you to apply styles to specific HTML elements more precisely. Here's a breakdown of different ways to combine selectors in CSS:
+
+(i) Grouping selector :-
+
+🔹 1. Grouping Selector :-
+
+Apply the same style to multiple selectors:
+
+h1, h2, p {
+  color: blue;
+}
+This styles all <h1>, <h2>, and <p> elements with blue text.
+
+✅ In a grouping selector, you can include any valid CSS selectors — not just HTML elements, but also:
+
+Classes (.classname)
+
+IDs (#idname)
+
+Pseudo-classes (:hover, :first-child, etc.)
+
+Attribute selectors ([type="text"], etc.)
+
+Even complex combinations (div > p.highlight)
+
+-->
+
+
+<!--
+
+In CSS, a child combinator selector is used to select elements that are direct children of a specific parent.
+
+🔹 Syntax:
+
+parent > child {
+  /* styles */
+}
+The > symbol is the child combinator.
+
+It matches only elements that are direct children, not deeper nested ones.
+
+
+ex :-
+
+<div class="parent">
+  <p>I'm a direct child.</p>
+  <div>
+    <p>I'm a grandchild.</p>
+  </div>
+</div>
+
+
+.parent > p {
+  color: red;
+}
+
+🔍 Result:
+Only the first <p> (direct child of .parent) will be red.
+
+The second <p> inside <div> won’t be affected (it's a grandchild, not direct).
+
+
+-->
+
+
+<!--
+(iii) Descendant :-  
+
+
+🟦 Descendant Combinator Selector in CSS :-
+
+The descendant combinator selector in CSS selects all elements that are nested inside a particular element, at any depth.
+
+A B {
+  /* styles */
+}
+
+
+This means:
+
+Select all <B> elements that are inside any <A> element,
+
+Even if <B> is deeply nested (not just a direct child).
+
+
+Ex :-
+
+<div class="parent">
+  <p>This is a paragraph</p>
+  <div>
+    <span>This is a span</span>
+  </div>
+</div>
+
+.parent span {
+  color: red;
+}
+
+
+✅ The span is inside .parent (even though it’s inside a nested div),
+➡️ So it gets red color.
+
+
+🔁 Difference from Child Combinator (>)
+Descendant (A B): Selects all levels of children.
+
+Child (A > B): Selects only immediate children.
+
+📌 Summary:
+A B = all <B> elements inside <A>, any level deep.
+
+It’s very commonly used in styling nested structures like menus, cards, etc.
+
+-->
+
+<!--
+
+(iv) Chaining selector :-
+
+:
+🟩 Chaining Selector in CSS :-
+
+A chaining selector (also called a compound selector) lets you apply styles to an element that matches multiple conditions at the same time — like having a specific tag, class, and/or ID together.
+
+syntax :-
+
+selector1selector2selector3 {
+  /* styles */
+}
+
+######### Ther's no space between selctors.
+
+📘 Example:
+
+<p class="highlight important">Hello!</p>
+
+p.highlight.important {
+  color: red;
+}
+✅ This will style the <p> element only if it has both highlight and important classes.
+
+
+🔁 Common Uses:
+Selector                                            	Meaning
+div.box	                                      A <div> with class box
+p#intro	                                     A <p> with ID intro
+input[type="text"].active	            An <input> of type text with class active
+
+❌ Not Chaining:
+
+div .box
+This is a descendant selector, not chaining. There’s a space, so it means:
+
+Select elements with class .box that are inside a <div>
+
+
+********** I can't insert ANY HTML ELEMENT IN MIDDLE AS SELECTOR IN CHAINING SELECTOR
+
+EX :-
+
+.class1.class2#id1p     here, p is aragraph element which must come at start only.
+p.class1.class2#id1       It is correct
+
+EVEN I CANT INCLUDE MORE THAN 1 HTML ELEMENT IN CHAINING SELECTOR
+
+📌 Summary:
+Chaining selector = Combine multiple selectors with no space.
+
+All conditions must be true on the same element.
+
+Useful for writing precise styles.
+
+-->
+
+
+<!--
+(V) COMBINING COMBINERS :-
+
+
+
+-->

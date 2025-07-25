@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Positioning Exercise</title>
+  <style>
+    /* Write your code here */
+
+
+    /*
+
+    Position : static 
+
+    .blue-box{
+      border:solid 10px blue;
+      position:static;
+      left:10px;
+      top:30px;
+    }
+
+    Since, the position is static so even though i give any 
+    value of top, bottom , then also the values will be 
+    IGNORED as positioning is STATIC
+
+    */
+
+    /*
+    .blue-box{
+      background-color:blue;
+      position:relative;
+      border:0px solid black;
+      border-width:500px 300px;
+      top:20px;
+      left:20px;
+    }
+
+    .red-circle{
+      background-color:red;
+      height:200px;
+      width:200px;
+    }
+
+
+    The above code in this comment is to be explained properly for clearing concept.......
+
+    Since class "red-circle" is child of class "blue-box", so the properties as mentioned in red-circle (background color red, height and width 200px)
+    will START TO BE VISIBLE TO ME INSIDE PARENT (BLUE-BOX) ONLY.
+
+    The content of red-circle will start to visbile to me from that very point where the ACTUAL CONTENT of blue-box starts (i.e, AFTER BORDERS OF blue-box)
+
+    Once uncomment the above code run and observe :-
+
+    (i) The complete black color in screen is nothing but the BORDERS of blue-box as it is of so much pixels(thick)
+    (ii) The red box visible is the actual position where the BORDERS OF blue-box ENDS
+    (iii) The blue rectangle alng with red square is nothing but the background color of "blue-box" visible as after a square of 200px*200px of red color from
+    red-circle there is still a width of 300px left below which the background color of the "blue-box" is visible.
+    (iv)Since, the webpage is completely filled so thats why only till visualization of red square the content height is shown.
+    */
+
+    .blue-box{
+      position:relative;
+      background-color:blue;
+      height: 300px;
+      width:500px;
+      left:200px;
+      top:200px;
+    }
+
+    .red-circle{
+      position: absolute;     /* Even "relative" positioning will work */
+      background-color: red;
+      height:200px;
+      width:200px;
+      border-radius:50%;
+      top:150px;
+      left:250px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blue-box">
+    <div class="red-circle">
+    </div>
+  </div>
+
+</body>
+
+</html>

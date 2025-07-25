@@ -1,0 +1,54 @@
+/* Write your code here: */
+
+h1,h2{          /* Grouping selector */
+    color:blueviolet;
+}
+
+.box > .done{           /* Child selector */
+    color:firebrick;
+}
+
+/*
+Even instead of above combination selector (child selector) the below can be used :-
+
+.box > p{
+    color:firebrick;
+}
+
+*/
+
+
+.box li{       /* Descendant selector */     /* also could write .list li{...} */
+    color:blue;
+}
+
+/*
+Even instead of above combination selector (descendant selector) the below can be used :-moz-any
+
+ul li{
+    color:blue;
+}
+
+*/
+
+li.done{        /* Combining combiners */   /* Chaining selector */
+    color:green;
+}
+
+/*
+In the above chanining selector i cant do :-
+
+.doneli{}       As it will look for a class named "doneli"
+
+That's why everytime the html element must be present FIRST AND ONLY 1 HTML ELEMENT SHOULD BE PRESENT IN CHAINING SELECTOR
+
+*/
+
+
+ul p.done{          /* Combining combiners */
+    font-size:0.5rem;
+}
+
+/*
+In the above code i used descendant selector along with combining combiners
+*/
