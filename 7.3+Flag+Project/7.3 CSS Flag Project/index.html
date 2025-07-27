@@ -6,7 +6,42 @@
   <title>CSS Flag Project</title>
   <style>
     /* Write your CSS Code here */
-    
+
+    .flag{
+      width:900px;
+      height:600px;
+      background-color: red;
+      margin:0px;
+      position:relative;
+    }
+
+    .flag > div {
+      position: absolute;
+      height:300px;
+      width:100%;
+      background-color:blue;
+      top:25%;
+    }
+
+    .flag > div > div{    /* way of representing descendant */
+      position: relative;
+      height:200px;
+      width:200px;
+      border-radius:100%;
+      background-color:white;
+      top:50px;
+      left:350px;
+    }
+
+    p{
+      margin:0;
+      font-size:3rem;
+      text-align: center;
+    }
+
+    .flag > p{
+      color:white;
+    }
   </style>
 </head>
 
