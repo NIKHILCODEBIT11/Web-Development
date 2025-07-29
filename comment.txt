@@ -481,3 +481,85 @@ color: green !important;
 
 
 IMPORTANCE > TYPE > SPECIFICITY > Position
+
+
+
+8.0    css display :-
+
+
+-----> When elements are inline, they behave like words in a sentence.
+
+
+
+IMPORTANT CONCEPT ON UNDERSTANDING WHEN GAP IS VISIBLE AND WHEN NOT :-----
+
+
+🔍 What You’ll See
+Test Case	                                      What You See	                                                        Why it Happens
+Inline — No space between tags	                AB (no gap)	                                                No whitespace node between them
+Inline — Space between tags	                    A B (with gap)	                                            Space becomes visible like between text
+Inline-block — No space	                      Two boxes touching	                                      No gap; no space node between elements
+Inline-block — Space between tags	           Two boxes with a visible gap	                              That space between tags shows up between boxes
+Inline-block — Newline between	            Two boxes with a visible gap (like above)	                      Newline is treated like a space
+
+
+
+8.1  ------>    using "float" 
+
+
+explaination for commented " clear:left " :-
+
+📐 Layout Step-by-Step
+.cat floats left
+➤ It starts on the top-left.
+
+.dog floats right
+➤ It starts on the top-right.
+
+footer wants to render:
+
+It sees .cat is floated left.
+
+Because of clear: left, it must go below the bottom of .cat.
+
+But .dog is on the right and NOT blocking it.
+
+So the footer places itself in the middle, between the floats.
+
+✅ This is valid: nothing is floated to the left of it anymore.
+
+
+
+################# For creating responsive websites :-
+
+(i) MEDIA QUERIES
+(ii) CSS GRID
+(iii) CSS FLEXBOX
+(iv) EXTERNAL FRAMEWORK { eg BOOTSTRAP }
+
+
+
+8.3 MEDIA QUERIES :-
+
+BONUS :-
+
+You can use media queries in CSS to detect the screen orientation — whether it's:
+
+Portrait (tall and narrow, like a phone held upright)
+
+Landscape (wide and short, like a laptop or phone turned sideways)
+
+
+example :-
+
+@media (orientation: portrait) {
+  body {
+    background-color: peachpuff;
+  }
+}
+
+@media (orientation: landscape) {
+  body {
+    background-color: lightblue;
+  }
+}
