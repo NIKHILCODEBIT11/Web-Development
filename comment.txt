@@ -563,3 +563,17 @@ example :-
     background-color: lightblue;
   }
 }
+
+
+If a child element has position: absolute, it will position itself relative to the top-left corner of the nearest ancestor that is positioned (relative, absolute, or fixed).
+
+
+
+IN FLEXBOX :-
+
+.container {
+      display: flex;
+      gap:10px;
+}
+
+"CONTAINER" IS REQUIRED BY EVERY "PARENT" IN FLEXBOX.
