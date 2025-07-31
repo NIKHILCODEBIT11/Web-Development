@@ -577,3 +577,381 @@ IN FLEXBOX :-
 }
 
 "CONTAINER" IS REQUIRED BY EVERY "PARENT" IN FLEXBOX.
+
+
+
+                              order :-          This property is applied to CHILD NOT PARENT.
+
+The order property lets you rearrange the visual order of flex items without changing the HTML structure.
+
+
+📌 Default Behavior:
+By default, all items have:
+
+order: 0;
+So they appear in the order they are written in the HTML.
+
+
+✨ How to use order
+You can set a positive or negative number to change the position.
+
+
+.item1 {
+  order: 3;
+}
+.item2 {
+  order: 1;
+}
+.item3 {
+  order: -1;
+}
+
+
+👆 In this case, the visual order will be:
+
+👉 .item3, then .item2, then .item1
+
+Because:
+
+.item3 → order -1
+
+.item2 → order 1
+
+.item1 → order 3
+
+
+
+                                  flex-wrap :-      This property is applied to PARENT NOT child
+
+By default, flex items are forced to stay on one line, even if they overflow.
+flex-wrap tells the container whether and how to wrap items when there isn’t enough space.
+
+
+| Value              | Description               | Behavior                                          |
+| ------------------ | ------------------------- | ------------------------------------------------- |
+| `nowrap` (default) | ❌ No wrapping             | All items stay on one line; overflow or shrink    |
+| `wrap`             | ✅ Wrap to next line       | Items go to a **new row** (or column) when needed |
+| `wrap-reverse`     | 🔁 Reverse wrap direction | Items wrap **opposite** to the main axis          |
+
+
+
+💡 Visual Example: flex-direction: row
+
+With flex-wrap: nowrap;
+
+| item1 item2 item3 item4 item5 item6 |
+    (👆 all in one line — even if they overflow)
+
+
+With flex-wrap: wrap;
+
+| item1 item2 item3 |
+| item4 item5 item6 |
+    (👆 wraps to next line when no more space)
+
+With wrap-reverse
+
+| item4 item5 item6 |
+| item1 item2 item3 |
+    (👆 same as wrap but second row is placed *above* the first)
+
+wrap-reverse is the property applied to PARENT not CHILD 
+
+
+
+                                      justify-content :-   It is a property applied to PARENT not CHILD
+
+The justify-content property is used in flexbox or grid layouts to align items horizontally (along the main axis) inside a container.
+
+SYNTAX :-
+
+
+.container {
+  display: flex; /* or display: grid; */
+  justify-content: <value>;
+}
+
+
+✅ Common Values and What They Do:
+
+
+
+| Value            | What it does                                                              |
+| ---------------- | ------------------------------------------------------------------------- |
+| `flex-start`     | Aligns items to the **start** of the main axis (left by default).         |
+| `flex-end`       | Aligns items to the **end** of the main axis (right by default).          |
+| `center`         | **Centers** items along the main axis.                                    |
+| `space-between`  | **Evenly distributes** items; first at start, last at end.                |
+| `space-around`   | Like `space-between`, but adds **space on both sides** of each item.      |
+| `space-evenly`   | **Equal space** between **all items and edges**.                          |
+| `start` / `end`  | Similar to `flex-start` / `flex-end`, but respects **writing direction**. |
+| `left` / `right` | Specifically align to left or right (used with certain layout modes).     |
+
+
+🧠 Tip:
+It only works if the container has display: flex or display: grid.
+
+If you want vertical alignment, use align-items (for single-line) or align-content (for multi-line).
+
+
+DIFFERENCE BETWEEN    "space-between"     "space-around"     "space-evenly"       :-
+
+
+✅ 1. space-between :-
+
+Space is only between the items.
+No space at the start or end of the container.
+
+
+|Item1    Item2    Item3|
+
+
+📌 Notice:
+
+Item1 touches the left edge.
+
+Item3 touches the right edge.
+
+Even space between only the items.
+
+
+
+✅ 2. space-around
+Equal space on both sides of each item.
+
+That means the space between items is double the space at the edges.
+
+
+|  Item1   Item2   Item3  |
+
+📌 Notice:
+
+There's some space on the left and right of the container.
+
+The space between items looks bigger because each item gets space on both sides.
+
+
+
+✅ 3. space-evenly
+Equal space everywhere – before the first item, between items, and after the last item.
+
+|   Item1   Item2   Item3   |
+
+📌 Notice:
+
+Space between all items and edges is exactly the same.
+
+
+
+| Property        | Edge Space | Between Items | Use Case                                |
+| --------------- | ---------- | ------------- | --------------------------------------- |
+| `space-between` | ❌ No       | ✅ Equal       | Spread items fully across container     |
+| `space-around`  | ✅ Half     | ✅ Double edge | Items need padding from container edges |
+| `space-evenly`  | ✅ Equal    | ✅ Equal       | Perfect symmetry everywhere             |
+
+
+
+
+
+DIFFERENCE BETWEEN      start/end      AND        left/right :-
+
+
+
+| Property | Affected by writing direction? | Meaning in LTR | Meaning in RTL | Use it when...                     |
+| -------- | ------------------------------ | -------------- | -------------- | ---------------------------------- |
+| `start`  | ✅ Yes                          | Left           | Right          | You want layout to adapt to locale |
+| `end`    | ✅ Yes                          | Right          | Left           | Same as above                      |
+| `left`   | ❌ No                           | Left           | Left           | Fixed left alignment needed        |
+| `right`  | ❌ No                           | Right          | Right          | Fixed right alignment needed       |
+
+
+
+
+
+                                    align-items :-  This property is applied to PARENT and NOT CHILD
+
+
+✅ align-items in CSS (Flexbox & Grid)
+The align-items property is used to align items vertically along the cross axis in a flex or grid container.
+
+
+
+🧭 Quick Orientation Recap:
+justify-content → aligns items on the main axis (usually horizontal in flex-direction: row).
+
+align-items → aligns items on the cross axis (usually vertical in flex-direction: row).
+
+
+.
+
+🧱 Syntax:-
+
+.container {
+  display: flex;
+  align-items: <value>;
+}
+
+
+✅ Common Values:-
+
+
+| Value                 | Description                                                               |
+| --------------------- | ------------------------------------------------------------------------- |
+| `stretch` *(default)* | Items **stretch** to fill the container vertically (if no height is set). |
+| `flex-start`          | Items are aligned to the **top** of the container.                        |
+| `flex-end`            | Items are aligned to the **bottom** of the container.                     |
+| `center`              | Items are **vertically centered**.                                        |
+| `baseline`            | Items are aligned based on their **text baseline**.                       |
+
+
+************** For getting result for "align-items" i must give height to the container (ON THE OTHER HAND "stretch" COULD WORK WITHOUT ANY height GIVEN)
+
+
+                        align-slef :-  This propert is applied to CHILD and NOT PARENT
+
+
+
+✅ align-self in CSS
+The align-self property is used to override the align-items value for a specific child inside a flex or grid container.
+
+📌 While align-items is set on the parent, align-self is set on the child to control its own vertical (cross-axis) alignment.
+
+It only works when the parent has display: flex or display: grid.
+
+
+
+🔹 Common Values:
+
+
+
+| Value        | Description                                                           |
+| ------------ | --------------------------------------------------------------------- |
+| `auto`       | Inherits the value from the parent’s `align-items`.                   |
+| `flex-start` | Align this item to the **top** (or start of the cross-axis).          |
+| `flex-end`   | Align this item to the **bottom** (or end of the cross-axis).         |
+| `center`     | Vertically **center** this item.                                      |
+| `baseline`   | Align item based on **text baseline**.                                |
+| `stretch`    | Stretch to fill container (default, unless height is explicitly set). |
+
+
+
+🎯 Example:
+
+
+<div class="container">
+  <div>Item 1</div>
+  <div class="special">Item 2</div>
+  <div>Item 3</div>
+</div>
+
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  height: 150px;
+  border: 2px solid black;
+}
+
+.special {
+  align-self: flex-end;
+}
+
+
+
+🔍 Result:
+
+All items go to the top (because of align-items: flex-start).
+
+But Item 2 goes to the bottom (because of align-self: flex-end on that child).
+
+
+🧠 Summary:-
+
+
+
+| Property      | Applied to | Affects             | Use for                     |
+| ------------- | ---------- | ------------------- | --------------------------- |
+| `align-items` | Parent     | All children        | Global vertical alignment   |
+| `align-self`  | Child      | That specific child | Override vertical alignment |
+
+
+
+
+                                align-content :-    It is a propert of PARENT and NOT CHILD
+
+
+align-content IS SIMILAR TO align-items , 
+
+
+                                  BUT align-content WORKS ONLY WHEN flex-wrap IS SET TO Wrap
+
+
+
+ChatGPT said:
+✅ align-content in CSS
+align-content is a layout property used in Flexbox (with wrapping) and CSS Grid to control spacing between multiple rows or columns along the cross axis.
+
+
+
+🔧 When to Use align-content?
+When your container has multiple lines of content, like:
+
+Flexbox with flex-wrap: wrap
+
+Multi-row Grid
+
+align-content only works when there’s extra space in the container’s cross axis.
+
+
+📦 Example Setup (Flexbox):
+
+
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  align-content: space-between;
+}
+.container div {
+  flex: 0 0 30%; /* Each item takes 30% width */
+  height: 50px;
+  background: salmon;
+  margin: 5px;
+}
+
+
+🎯 What Does align-content Do?
+
+
+| Value               | What it Does                                                    |
+| ------------------- | --------------------------------------------------------------- |
+| `flex-start`        | Rows are packed to the **top**.                                 |
+| `flex-end`          | Rows are packed to the **bottom**.                              |
+| `center`            | Rows are **centered vertically** in the container.              |
+| `space-between`     | Equal vertical **space between** each row (none at top/bottom). |
+| `space-around`      | Equal space **above & below each row**. Edges get half-space.   |
+| `space-evenly`      | Equal space **between all rows and edges**.                     |
+| `stretch` (default) | Rows stretch to fill the container (if no height set on items). |
+
+
+
+                              Difference between align-items and align-content :- 
+
+
+
+| Property            | Applies To                 | Works When                             | Aligns What                         |
+| ------------------- | -------------------------- | -------------------------------------- | ----------------------------------- |
+| **`align-items`**   | All **individual items**   | Always                                 | Each item inside the container      |
+| **`align-content`** | The **group of item rows** | Only with multiple lines (`flex-wrap`) | The space **between rows** of items |
+
+
